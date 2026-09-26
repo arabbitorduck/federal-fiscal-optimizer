@@ -1,0 +1,6 @@
+﻿provision_id,category,description,actuarial_balance_change_pct_payroll,annual_balance_75th_year_change_pct_payroll,long_range_shortfall_pct_payroll,annual_75th_year_shortfall_pct_payroll,trustees_vintage,source_url,solver_role
+CURRENT_LAW_2026,Current law,Combined OASDI 75-year actuarial deficit under the 2026 Trustees Report,,,4.42,6.57,2026,https://www.ssa.gov/oact/trsum/index.html?level=1,TARGET
+E3.2_2025,Taxable maximum,Increase taxable maximum until 90 percent of earnings are taxable; no benefit credit for additional earnings taxed,1.07,1.18,,,2025,https://www.ssa.gov/OACT/solvency/provisions_tr2025/summary.html,SUPPLEMENTAL_ACTUARIAL_EVIDENCE
+B1.5_2025,Progressive price indexing,Progressive price indexing above the 60th percentile beginning with newly eligible beneficiaries in 2032,0.85,2.01,,,2025,https://www.ssa.gov/OACT/solvency/provisions_tr2025/summary.html,SUPPLEMENTAL_ACTUARIAL_EVIDENCE
+A1_2026,COLA,Reduce annual COLA by 1 percentage point starting December 2027,2.03,2.86,,,2026,https://www.ssa.gov/oact/solvency/provisions/cola_summary.html,SOURCE_UNIVERSE; PHILOSOPHY_REVIEW_REQUIRED
+A2_2026,COLA,Reduce annual COLA by 0.5 percentage point starting December 2027,1.06,1.5,,,2026,https://www.ssa.gov/oact/solvency/provisions/cola_summary.html,SOURCE_UNIVERSE; PHILOSOPHY_REVIEW_REQUIRED

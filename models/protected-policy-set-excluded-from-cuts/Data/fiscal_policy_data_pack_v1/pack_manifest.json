@@ -1,0 +1,22 @@
+{
+  "pack_version": "v1",
+  "built_date": "2026-09-11",
+  "cbo_current_latest_family_count": 127,
+  "candidate_variant_count": 190,
+  "annual_flow_row_count": 1810,
+  "families_by_vintage": {
+    "2018": 33,
+    "2020": 12,
+    "2022": 6,
+    "2024": 76
+  },
+  "files": [
+    "cbo_current_families.csv",
+    "policy_candidates.csv",
+    "policy_annual_flows.csv",
+    "ssa_actuarial_reference.csv",
+    "source_manifest.csv",
+    "coverage_audit.csv",
+    "README.txt"
+  ]
+}

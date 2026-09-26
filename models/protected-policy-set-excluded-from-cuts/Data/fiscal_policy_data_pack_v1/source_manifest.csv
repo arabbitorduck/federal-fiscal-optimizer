@@ -1,0 +1,11 @@
+﻿source_id,agency,title,url,retrieval_date,notes
+CBO_CURRENT_BUDGET_OPTIONS_INDEX,CBO,Budget Options current/latest index,https://www.cbo.gov/budget-options,2026-09-11,127 latest option families; index is regularly updated and retains most recent version of each option.
+CBO_2024_OPTIONS,CBO,"Options for Reducing the Deficit, 2025 to 2034",https://www.cbo.gov/publication/60557,2026-09-11,76 option families; annual tables harvested from official option pages.
+CBO_2022_OPTIONS,CBO,"Options for Reducing the Deficit, 2023 to 2032",https://www.cbo.gov/publication/58164,2026-09-11,Current/latest options from 2022 retained where not superseded.
+CBO_2020_OPTIONS,CBO,"Options for Reducing the Deficit, 2021 to 2030",https://www.cbo.gov/publication/56783,2026-09-11,Current/latest options from 2020 retained where not superseded.
+CBO_2018_OPTIONS,CBO,"Options for Reducing the Deficit, 2019 to 2028",https://www.cbo.gov/publication/54667,2026-09-11,Current/latest options from 2018 retained where not superseded. A small subset is published only as ten-year totals.
+SSA_2026_TRUSTEES,SSA OACT,2026 OASDI Trustees Report,https://www.ssa.gov/oact/trsum/index.html?level=1,2026-09-11,Current combined OASDI actuarial deficit is 4.42 percent of taxable payroll.
+SSA_SOLVENCY_PROVISIONS,SSA OACT,Individual Social Security solvency provisions,https://www.ssa.gov/OACT/solvency/provisions/,2026-09-11,SSA states some provision categories are still being updated to the 2026 Trustees basis; 2025 estimates remain official for categories not yet updated.
+GAO_DUPLICATION_2026,GAO,Duplication & Cost Savings Recommendations,https://www.gao.gov/duplication-cost-savings/duplication-cost-savings-recommendations,2026-09-11,"Official downloadable 2026 recommendation set exists; binary CSV/XLSX download cannot be imported by the present browser layer, so not yet converted into solver rows."
+JCT_TAX_EXPENDITURES_2025,JCT,Estimates of Federal Tax Expenditures for Fiscal Years 2025-2029,https://www.jct.gov/publications/2025/jcx-45-25/,2026-09-11,Screening source only; tax-expenditure amounts are not treated as repeal scores.
+MEDPAC_2026,MedPAC,March 2026 Report to the Congress: Medicare Payment Policy,https://www.medpac.gov/document/march-2026-report-to-the-congress-medicare-payment-policy/,2026-09-11,Supplementary Medicare policy evidence; no unscored savings are fabricated.
