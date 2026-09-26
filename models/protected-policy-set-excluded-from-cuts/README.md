@@ -70,4 +70,10 @@ Rscript federal_fiscal_optimizer.R
 
 The script resolves its own directory, checks and installs required R packages if necessary, validates fixed repository inputs, obtains required public validation data, runs the optimization and independent validation stages, and writes the resulting audit files locally.
 
-See [METHODOLOGY.md](METHODOLOGY.md) for the analytical design and [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for software, package, input, credential, and execution requirements.
+## Technical requirements
+
+The validated release uses R 4.6.1 and HiGHS 1.14.0.2. The script declares and checks 22 direct R package dependencies before execution.
+
+Independent historical validation requires `BEA_API_KEY`, `BLS_API_KEY`, and `FRED_API_KEY`. The repository supplies the fixed CBO workbook, JCT PDF, fiscal-policy data pack, input manifest, and release-reference file. Other official baseline and validation data are acquired or queried during execution.
+
+See [METHODOLOGY.md](METHODOLOGY.md) for the analytical design and [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for the complete package list, API-key registration and configuration, supplied-versus-runtime input inventory, numerical tolerances, and reproduction standard.
