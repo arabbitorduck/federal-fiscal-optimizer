@@ -7174,7 +7174,9 @@ classify_direct_account <- function(title, disc_or_mand, category, agency, burea
   funding_class <- normalize_text_cell(disc_or_mand)
 
   # EISENHOWER RULE
-  # Source: Dwight D. Eisenhower, "Remarks at the Lincoln Day Box Supper,"
+  #
+  # "Eisenhower Rule" is this model's name for the protection principle derived
+  # from Dwight D. Eisenhower, "Remarks at the Lincoln Day Box Supper,"
   # Washington, D.C., February 5, 1954, Public Papers of the Presidents.
   # American Presidency Project:
   # https://www.presidency.ucsb.edu/documents/remarks-the-lincoln-day-box-supper
@@ -7183,9 +7185,13 @@ classify_direct_account <- function(title, disc_or_mand, category, agency, burea
   # those things which deal with people's money, or their economy, or their form
   # of government, be conservative."
   #
-  # Program identity is primary. Agency and bureau are used only for explicit
-  # institutional functions whose mission makes a generic account-growth
-  # restraint substantively misleading.
+  # This is model nomenclature, not a statutory or regulatory term and not a
+  # claim that Eisenhower supplied the model's classification taxonomy.
+  # Operationally, the classifier protects person-facing benefits, earned
+  # compensation, household security, productive capacity, and core state
+  # capacity from generic account-level reductions. Program identity is primary.
+  # Agency and bureau are used only for explicit institutional functions whose
+  # mission makes a generic account-growth restraint substantively misleading.
 
   if ((category %in% "Net Interest") || (function_code %in% "900") || stringr::str_detect(t, "interest on the public debt|net interest")) {
     return(c(status="BLOCKED", protected="ENDOGENOUS_NET_INTEREST", control_class="NO_GENERIC_CONTROL", reason="Net interest is generated endogenously by the validated debt-service engine."))
