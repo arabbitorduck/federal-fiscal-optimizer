@@ -1,9 +1,9 @@
 # ==============================================================================
 # PUBLIC REPRODUCIBILITY RELEASE
 # The repository root resolves from this script's own location, so the file may be
-# sourced from any R working directory. Required non-downloadable inputs are repository
-# files under Data/. Runtime outputs are written under analysis_output/. The frozen
-# Frozen release regression fixture is stored under Data/reference/.
+# sourced from any R working directory. Fixed repository inputs are stored under Data/,
+# runtime outputs are written under analysis_output/, and the validated release
+# reference is stored under Data/reference/.
 #
 
 # FEDERAL FISCAL CAPACITY AND DEBT OPTIMIZATION MODEL
@@ -16176,7 +16176,7 @@ run_model_presentation_audit <- function() {
 
 
 # ==============================================================================
-# MODEL LAYER RECOMMENDATION-HARDENING MODEL STAGE
+# FINAL RECOMMENDATION AUDIT STAGE
 # ==============================================================================
 # Recommendation-hardening layer preserves the validated presentation-audit fiscal model and
 # solver architecture. It hardens the 23-policy robust + Social-Security-solvent
@@ -16955,7 +16955,7 @@ run_model_recommendation_hardening <- function() {
 
 
 # ==============================================================================
-# MODEL LAYER TARGETED SUBSTITUTE-EXPANSION MODEL STAGE
+# TARGETED SUBSTITUTE ANALYSIS STAGE
 # ==============================================================================
 # Substitute-expansion layer preserves the validated recommendation-hardening fiscal model,
 # recommendation architecture, protections, robust debt targets, approximate
@@ -17683,7 +17683,7 @@ build_substitute_expansion_reference_comparison <- function(search_result, bottl
 
 # ------------------------------------------------------------------------------
 # FUNCTION: run_full_solution_search
-# Purpose: Run the complete recommendation-hardening recommendation-hardening search on
+# Purpose: Run the complete recommendation-hardening search on
 #          the expanded substitute-expansion universe, then explicitly retest all
 #          four historical bottlenecks and document replacement packages.
 # ------------------------------------------------------------------------------
@@ -18820,5 +18820,5 @@ execute_model_with_audit_capture <- function() {
 #   a left-aligned caption, and `𝕏: @arabbitorduck`.
 # ==============================================================================
 
-# Execute the complete final audit-and-freeze model after all public release model stages have loaded.
+# Execute the complete validated model after all public release stages have loaded.
 MODEL_RESULT <- execute_model_with_audit_capture()
