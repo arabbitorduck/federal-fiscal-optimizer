@@ -102,21 +102,41 @@ The validated release reports:
 
 A total-only official score is not converted into an annual solver path unless the model has an externally defensible annualization method. The model does not invent annual fiscal paths solely to enlarge the policy universe.
 
-## 8. Protected policy set
+## 8. Protected policy set and the Eisenhower Rule
 
-Policy eligibility is evaluated separately from fiscal scoring.
+Policy eligibility is evaluated separately from fiscal scoring. A policy can have a valid official fiscal score and still be excluded from a solver universe because it violates a protected category.
 
 The protected set covers ordinary wages, saving and investment, family formation, business reinvestment, and protected Social Security and Medicare functions.
 
-The model uses two policy universes.
+### Origin of the Eisenhower Rule
 
-**Strict** applies the Eisenhower Rule without discretionary exceptions.
+The model uses the term **Eisenhower Rule** for its organizing protection principle. The name comes from President Dwight D. Eisenhower's *Remarks at the Lincoln Day Box Supper* in Washington, D.C., on February 5, 1954:
 
-**Expanded** retains the same protected categories while allowing reviewed discretion at the margins where a policy does not violate the protected set.
+> "In all those things which deal with people, be liberal, be human. In all those things which deal with people's money, or their economy, or their form of government, be conservative."
 
-The Strict universe establishes the fiscal-capacity frontier under the more restrictive rule. The Expanded universe establishes the larger admissible policy space from which a feasible package can be selected.
+Source: Dwight D. Eisenhower, *Remarks at the Lincoln Day Box Supper*, February 5, 1954, Public Papers of the Presidents; American Presidency Project:  
+`https://www.presidency.ucsb.edu/documents/remarks-the-lincoln-day-box-supper`
 
-Policies classified as blocked remain outside the solver under both modes. Policies classified as conditional may enter the Expanded universe only after the model's explicit review rules are satisfied.
+The phrase **Eisenhower Rule** is the model's own shorthand for applying that distinction to fiscal-policy eligibility. It is not presented as a statutory rule, an administrative standard, or Eisenhower's own formal classification system.
+
+### Operational application
+
+In the model, the rule is implemented as a protection screen before generic account-level spending controls enter the solver. Program identity is the primary basis for classification. Agency and bureau identity are used only for institutional functions where the account title alone would be misleading or ambiguous.
+
+The classifier protects person-facing benefits, earned compensation, household security, productive capacity, and core state capacity from generic account-growth restraints. This includes, where applicable, social-insurance and retirement benefits, health-access functions, veterans' benefits and care, education and human-capital functions, research and scientific capacity, housing security, infrastructure, and program-integrity or other state-capacity functions. Net interest is separately excluded because it is generated endogenously by the debt-service model rather than treated as a discretionary spending lever.
+
+The protection rule does not mean that every account associated with a protected institution is automatically untouchable. The model distinguishes the protected function from surrounding administrative or fiscal margins and records the classification basis for account-level controls.
+
+### Strict and Expanded universes
+
+The model uses two policy universes:
+
+- **Strict:** applies the protection rule without discretionary exceptions. Controls that would reduce a protected function are excluded rather than bounded through discretionary judgment.
+- **Expanded:** retains the same protected categories while permitting reviewed discretion at the margins where a proposal can be bounded without violating the protected interest itself.
+
+The Strict universe establishes the fiscal-capacity frontier under the more restrictive application. The Expanded universe establishes the larger admissible policy space from which a feasible package can be selected.
+
+Policies classified as blocked remain outside the solver under both modes. Policies classified as conditional may enter the Expanded universe only after the model's explicit review rules are satisfied. The distinction therefore concerns the treatment of marginal, conditionally admissible policies; it does not create a second set of protected categories.
 
 ## 9. Decision variables and parameterization
 
