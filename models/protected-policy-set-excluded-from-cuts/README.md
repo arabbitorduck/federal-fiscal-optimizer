@@ -1,40 +1,73 @@
 # Protected Policy Set Excluded from Cuts
 
-This model searches for federal fiscal-policy combinations capable of meeting the required debt and Social Security solvency constraints while excluding the defined protected policy set from cuts and other prohibited burdens.
+This model searches for federal fiscal packages capable of meeting the required debt and Social Security solvency constraints while excluding the defined protected policy set from cuts and other prohibited burdens.
 
-The protected categories include ordinary wages, saving and investment, family formation, business reinvestment, and protected Social Security and Medicare functions. Social Security and Medicare are not eliminable programs.
+It is implemented in R as a mixed-integer linear programming model and solved with HiGHS. The model evaluates annual fiscal effects through 2046, permits continuous policy rates or levels where the source evidence supports parameterization, incorporates debt-service effects and material policy interactions, imposes required stress scenarios, and independently re-simulates retained solutions outside the optimization matrix.
 
-The model uses mixed-integer linear programming with HiGHS, robust required scenarios, independent post-solve simulation, overlap controls, numerical-gap audits, source hashing, and a frozen release-parity check.
+## Policy-space rule
 
-## Required fiscal targets
+The protected categories include ordinary wages, saving and investment, family formation, business reinvestment, and protected Social Security and Medicare functions. Social Security and Medicare are not modeled as eliminable programs.
 
-The published model requires:
+The model evaluates two policy universes:
 
-- debt held by the public at or below 90% of GDP in 2036;
-- debt held by the public at or below 80% of GDP in 2046;
-- Social Security actuarial improvement of at least 4.42% of taxable payroll.
+- **Strict:** applies the Eisenhower Rule without discretionary exceptions.
+- **Expanded:** retains the same protected categories while permitting reviewed discretion at the margins where a policy does not violate the protected set.
 
-The 75% debt-to-GDP value is the long-run reference center used by the model. The 70% line is a lower presentation reference, not the binding 2046 ceiling.
+The Strict universe measures the fiscal capacity available under the more restrictive rule. The Expanded universe tests the larger admissible policy space.
 
-## Policy-space treatment
+In the validated release, the package-ready Strict MILP contains **424 candidate activation variables**. The package-ready Expanded MILP contains **1,012 candidate activation variables**.
 
-The model evaluates two protection modes internally.
+## Required constraints
 
-**Strict** applies the Eisenhower Rule conservatively.
+A feasible selected package must satisfy debt held by the public at or below **90% of GDP in 2036** and **80% of GDP in 2046** under each of the five required robustness scenarios. It must also provide an approximate 75-year Social Security actuarial improvement of at least **4.42% of taxable payroll** and satisfy the model's protection, score-basis, family-exclusivity, and material-overlap constraints.
 
-**Expanded** applies the same protected-category rule while permitting reviewed discretion at the margins where a policy does not violate the protected set.
+The model limits aggregate Social Security actuarial improvement to **4.92% of taxable payroll**, which is the 4.42% modeled shortfall plus a 0.50 percentage-point configured excess margin.
 
-The optimizer uses these modes to distinguish the strict capacity frontier from the larger admissible policy space used for the published recommendation.
+The model's 75% debt-to-GDP value is the center of its long-run reference range. The 70% value is a lower presentation reference. Neither is the binding 2046 ceiling; the hard upper limit is 80%.
 
-## Run
+## Validated reference result
 
-Open `federal_fiscal_optimizer.R` in RStudio and source it, or run it with `Rscript`.
+The validated release contains **1,116 active solver candidates** before protection-mode-specific package construction and selects a **21-policy** package from the admissible Expanded universe.
 
-The script resolves the model directory from its own file location, checks required packages, offers to install missing packages in an interactive session, validates fixed repository inputs, and writes runtime outputs locally.
+The selected package produces:
 
-See:
+- central debt/GDP of **86.34% in 2036** and **66.55% in 2046**;
+- worst required-scenario debt/GDP of **89.99% in 2036** and **74.66% in 2046**;
+- Social Security actuarial improvement of **4.50% of taxable payroll**.
 
-- [`METHODOLOGY.md`](METHODOLOGY.md)
-- [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md)
+The selected package is the lowest-complexity robust and Social Security-solvent package on the model's recommendation frontier, with policy count used as a secondary ordering criterion.
 
-Runtime results are intentionally not committed to this repository.
+These are independent model results, not official projections by the agencies supplying the underlying data or policy scores.
+
+## Validated model scale
+
+The Expanded package-ready MILP used for the principal recommendation analysis contains:
+
+- **21,411 total variables**;
+- **10,949 integer variables**;
+- **10,462 continuous variables**;
+- **21,922 constraints**;
+- **1,568,494 nonzero matrix coefficients**;
+- **5 required robustness scenarios**.
+
+The validated run evaluated **11,809 parameterized implementation and phase-in schedules** and executed **121 MILP solves** across feasibility, capacity, recommendation, diversity, and counterfactual analyses.
+
+## Running the model
+
+The main executable is `federal_fiscal_optimizer.R`.
+
+In RStudio:
+
+```r
+source("federal_fiscal_optimizer.R", echo = TRUE)
+```
+
+From a shell with R available:
+
+```text
+Rscript federal_fiscal_optimizer.R
+```
+
+The script resolves its own directory, checks and installs required R packages if necessary, validates fixed repository inputs, obtains required public validation data, runs the optimization and independent validation stages, and writes the resulting audit files locally.
+
+See [METHODOLOGY.md](METHODOLOGY.md) for the analytical design and [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for software, package, input, credential, and execution requirements.
