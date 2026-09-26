@@ -8,12 +8,21 @@ It is implemented in R as a mixed-integer linear programming model and solved wi
 
 The protected categories include ordinary wages, saving and investment, family formation, business reinvestment, and protected Social Security and Medicare functions. Social Security and Medicare are not modeled as eliminable programs.
 
+The model's protection screen is organized around what this project calls the **Eisenhower Rule**. The term is drawn from President Dwight D. Eisenhower's *Remarks at the Lincoln Day Box Supper* in Washington, D.C., on February 5, 1954. Eisenhower stated:
+
+> "In all those things which deal with people, be liberal, be human. In all those things which deal with people's money, or their economy, or their form of government, be conservative."
+
+Source: Dwight D. Eisenhower, *Remarks at the Lincoln Day Box Supper*, February 5, 1954, Public Papers of the Presidents; available through the American Presidency Project:  
+`https://www.presidency.ucsb.edu/documents/remarks-the-lincoln-day-box-supper`
+
+**Eisenhower Rule** is a model-specific name for the protection principle derived from that statement; it is not a statutory or regulatory term. Operationally, the classifier protects person-facing benefits, earned compensation, household security, productive capacity, and core state capacity from generic account-level cuts. Program identity is primary. Agency or bureau identity is used only where institutional function is necessary to classify an otherwise ambiguous account.
+
 The model evaluates two policy universes:
 
-- **Strict:** applies the Eisenhower Rule without discretionary exceptions.
-- **Expanded:** retains the same protected categories while permitting reviewed discretion at the margins where a policy does not violate the protected set.
+- **Strict:** applies that protection rule without discretionary exceptions. A policy or account control that crosses a protected category is excluded.
+- **Expanded:** retains the same protected categories while permitting reviewed discretion at the margins where a proposal can be bounded without violating the protected interest itself.
 
-The Strict universe measures the fiscal capacity available under the more restrictive rule. The Expanded universe tests the larger admissible policy space.
+The Strict universe measures fiscal capacity under the more restrictive application. The Expanded universe tests the larger admissible policy space while retaining the same underlying protection principle.
 
 In the validated release, the package-ready Strict MILP contains **424 candidate activation variables**. The package-ready Expanded MILP contains **1,012 candidate activation variables**.
 
