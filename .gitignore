@@ -1,0 +1,29 @@
+# R and RStudio
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rproj
+
+# Local credentials and user-specific startup files
+.Renviron
+.Rprofile
+
+# Runtime model outputs
+**/Cache/
+**/Data/validation_raw/
+**/analysis_output/
+**/analysis_output.zip
+
+# Runtime-acquired source files.
+# Retain the two fixed source inputs committed with the published model.
+**/Data/source_raw/*
+!**/Data/source_raw/cbo_spending_detail_2026_06.xlsx
+!**/Data/source_raw/jct_tax_expenditures_2025_2029.pdf
+
+# Temporary downloads and editor/OS files
+*.download
+*.tmp
+~$*
+.DS_Store
+Thumbs.db
